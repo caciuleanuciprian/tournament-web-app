@@ -1,0 +1,7 @@
+.container {
+  flex-direction: row;
+}
+
+.column {
+  margin: 0 auto;
+}
