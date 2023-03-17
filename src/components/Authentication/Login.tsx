@@ -27,7 +27,6 @@ const Login = () => {
       })
       .catch((err) => {
         toast.error("Username or password is incorrect!");
-        console.log(err);
       });
   };
   return (

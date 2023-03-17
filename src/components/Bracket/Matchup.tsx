@@ -11,7 +11,6 @@ const Matchup: React.FC<{
   loser: any;
   tournamentId: number;
 }> = ({ participant1, participant2, matchId, winner, loser, tournamentId }) => {
-  console.log(winner);
   return (
     <div className={styles.matchup}>
       <div className={styles.dividerLeft}></div>

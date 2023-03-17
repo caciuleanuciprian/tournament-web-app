@@ -23,10 +23,9 @@ const CreateTournament = () => {
 
   const splitTeams = (teams: string) => {
     const teamsArray = teams.split(",");
-    const splitArray = teamsArray.map((team) => {
-      return { name: team };
+    const splitArray = teamsArray.map((team, index) => {
+      return { name: team, key: index };
     });
-    console.log(splitArray);
     return splitArray;
   };
 
@@ -44,7 +43,6 @@ const CreateTournament = () => {
       })
       .catch((err) => {
         toast.error("There was an error creating your tournament!");
-        console.log(err);
       });
   };
 

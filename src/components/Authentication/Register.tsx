@@ -36,7 +36,6 @@ const Register = () => {
       })
       .catch((err) => {
         toast.error("There was an error with your registration form!");
-        console.log(err);
       });
   };
 

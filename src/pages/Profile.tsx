@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { getCookie } from "../utils/cookieUtils";
+import { deleteCookie, getCookie } from "../utils/cookieUtils";
 import Container from "../components/UI/Container";
 import Loader from "../components/UI/Loader";
 import { User } from "../types/User";
@@ -8,6 +8,7 @@ import FormInput from "../components/UI/FormInput";
 import Table from "../components/Table/Table";
 import styles from "./Profile.module.css";
 import Button from "../components/UI/Button";
+import { toast } from "react-toastify";
 
 const Profile = () => {
   const [user, setUser] = useState<User>();
@@ -23,10 +24,18 @@ const Profile = () => {
         }
       )
       .then((res) => {
-        console.log(res);
         setUser(res.data);
       });
   }
+
+  const logoutUser = () => {
+    axios
+      .post(`${import.meta.env.VITE_API_LINK}/auth/logout`, {})
+      .then((res) => res);
+    deleteCookie("auth_by_cookie");
+    deleteCookie("current_user");
+    toast.success("Logged out successfully!");
+  };
   return (
     <Container>
       {user ? (
@@ -44,7 +53,13 @@ const Profile = () => {
               type="text"
             />
             <FormInput label="Email" defaultValue={user.email} type="email" />
-            <Button className={styles.button} type="submit" text="Save" />
+            <Button className={styles.button} type="button" text="Save" />
+            <Button
+              onClick={() => logoutUser()}
+              className={styles.button}
+              type="button"
+              text="Logout"
+            />
             <p className={styles.table_title}>My Tournaments</p>
             <Table fields={fields} entries={user.tournaments} />
           </div>

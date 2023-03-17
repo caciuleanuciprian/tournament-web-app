@@ -54,6 +54,7 @@
   border: 2px solid var(--color-tertiary);
   transition: all 0.3s ease-in-out;
   margin-top: 16px;
+  margin-right: 16px;
 }
 
 .button:hover {

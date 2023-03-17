@@ -12,7 +12,6 @@ const Bracket = (props: any) => {
               <>
                 <Column key={key} className={styles.bracketColumn}>
                   {value.map((matchup: any, index: any) => {
-                    console.log(value);
                     return (
                       <Matchup
                         key={index}

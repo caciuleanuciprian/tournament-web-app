@@ -16,14 +16,12 @@ const TournamentDetails = () => {
     axios
       .get(`${import.meta.env.VITE_API_LINK}/tournament/${params.id}`)
       .then((res) => {
-        console.log(res.data);
         setTournament(res.data);
       });
   };
   if (!tournament) {
     fetchData();
   }
-  console.log(tournament);
   return (
     <Container>
       {tournament ? (

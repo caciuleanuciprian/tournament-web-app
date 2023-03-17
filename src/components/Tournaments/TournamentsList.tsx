@@ -10,6 +10,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Tournament } from "../../types/Tournament";
 import { useState } from "react";
 import Loader from "../UI/Loader";
+import { toast } from "react-toastify";
 
 const TournamentsList = () => {
   const navigate = useNavigate();
@@ -23,10 +24,9 @@ const TournamentsList = () => {
       })
       .then((res) => {
         setTournaments(res.data);
-        console.log(res.data);
       })
       .catch((err) => {
-        console.log(err);
+        toast.error("Error while fetching tournaments.");
       });
   }
   return (
