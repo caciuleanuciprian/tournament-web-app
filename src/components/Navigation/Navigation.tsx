@@ -5,12 +5,12 @@ import NavigationLink from "./NavigationLink";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { getCookie } from "../../utils/cookieUtils";
 
 const Navigation = () => {
-  const [currentActive, setCurrentActive] = useState(0);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [userState, setUserState] = useState(
-    isAuthenticated ? "profile" : "login" // TODO Profile will be changed to the basic circle with image
+  const [currentActive, setCurrentActive] = useState<number>(); // BUG If entering manual URL the active link is not set (maybe useContext or Redux to handle class changes based on current URL)
+  const [userState, setUserState] = useState<string>(
+    getCookie("current_user") ? "profile" : "login" // TODO Profile will be changed to the basic circle with image
   );
   const navigate = useNavigate();
   const links = ["home", "tournaments", "about", "support", userState];
@@ -19,6 +19,7 @@ const Navigation = () => {
       <Logo
         onClick={() => {
           navigate("/");
+          setCurrentActive(0);
         }}
       />
       <ul className={styles.navigation_list}>

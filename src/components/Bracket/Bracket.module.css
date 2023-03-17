@@ -1,0 +1,169 @@
+.matchup {
+  margin-bottom: 15px;
+  position: relative;
+  margin-left: 50px;
+}
+
+.bracket {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  min-height: 750px;
+  min-width: 100vw;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  z-index: 1;
+}
+
+.dividerRight {
+  width: 50px;
+  border-bottom: 1px solid white;
+  position: absolute;
+  right: -50px;
+  top: 50%;
+}
+
+.dividerLeft {
+  width: 50px;
+  border-bottom: 1px solid white;
+  position: absolute;
+  left: -50px;
+  top: 50%;
+}
+
+.dividerVertical {
+  width: 1px;
+  border-left: 1px solid white;
+  position: absolute;
+  right: -50px;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.bracketColumn {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bracketColumn:nth-child(1) .matchup .dividerLeft {
+  border: none;
+}
+
+.bracketColumn:nth-child(2) {
+  margin-left: 50px;
+}
+
+.bracketColumn:nth-child(2) .matchup:first-of-type {
+  margin-top: 50px;
+}
+
+.bracketColumn:nth-child(2) .matchup {
+  margin-top: 95px;
+}
+
+.bracketColumn:nth-child(2) .matchup:first-of-type .dividerVertical {
+  height: 250%;
+}
+
+.bracketColumn:nth-child(2) .matchup .dividerVertical {
+  height: 250%;
+}
+
+.bracketColumn:nth-child(3) {
+  margin-left: 50px;
+}
+
+.bracketColumn:nth-child(3) .matchup:first-of-type {
+  margin-top: 150px;
+}
+
+.bracketColumn:nth-child(3) .matchup:last-of-type {
+  margin-top: 300px;
+}
+
+.bracketColumn:nth-child(3) .matchup:first-of-type .dividerVertical {
+  height: 300%;
+}
+
+.bracketColumn:nth-child(3) .matchup:last-of-type .dividerVertical {
+  height: 300%;
+  top: -250%;
+}
+
+.bracketColumn:nth-child(4) {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.bracketColumn:nth-child(4) .matchup .dividerRight,
+.bracketColumn:nth-child(4) .matchup .dividerVertical {
+  border: none;
+}
+
+.bracketColumn:nth-child(4) .matchup {
+  margin-top: 350px;
+}
+
+.bracketColumn .matchup:first-of-type .dividerVertical {
+  height: 100%;
+  top: 50%;
+}
+
+.bracketColumn .matchup .dividerVertical {
+  height: 120%;
+}
+
+.bracketColumn .matchup:last-of-type .dividerVertical {
+  height: 50%;
+  bottom: 50%;
+}
+
+.participant {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 24px;
+  background-color: var(--color-secondary);
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-primary);
+  border-radius: 3px;
+}
+
+.winner {
+  background-color: var(--color-tertiary);
+  color: var(--color-text-primary);
+  transition: all 0.3s ease-in-out;
+  cursor: arrow;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  display: flex;
+  align-items: center;
+}
+
+.winner:hover {
+  background-color: var(--color-text-primary);
+  color: var(--color-primary);
+  transition: all 0.3s ease-in-out;
+}
+
+.loser {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  cursor: arrow;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  display: flex;
+  align-items: center;
+}
+
+.loser:hover {
+  color: var(--color-text-secondary);
+  cursor: arrow;
+  transition: all 0.3s ease-in-out;
+}

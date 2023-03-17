@@ -1,0 +1,84 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  padding: 0px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.form_title {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-top: 16px;
+}
+
+.table_title {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 32px 0px 16px 0px;
+}
+
+.btn_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 16px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.btn_container .button:first-child {
+  background-color: var(--color-tertiary);
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-tertiary);
+}
+
+.btn_container .button:first-child:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-tertiary);
+}
+
+.button {
+  width: 150px;
+  text-transform: capitalize;
+  padding: 12px !important;
+  cursor: pointer;
+  background-color: var(--color-tertiary);
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-tertiary);
+  transition: all 0.3s ease-in-out;
+  margin-top: 16px;
+}
+
+.button:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-tertiary);
+}
+
+.back_button {
+  width: 100px;
+  text-transform: capitalize;
+  padding: 12px !important;
+  cursor: pointer;
+  background-color: var(--color-tertiary);
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-tertiary);
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 24px;
+}
+
+.back_button:hover {
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-tertiary);
+}

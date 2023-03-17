@@ -1,5 +1,129 @@
 .container {
   align-items: flex-start;
-  padding: 24px;
   color: var(--color-text-primary);
+  padding: 24px 48px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 48px;
+  margin-bottom: 24px;
+}
+
+.rowDetails {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0px 48px;
+}
+
+.rowText {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+  color: var(--color-text-primary);
+  width: 50%;
+}
+
+.rowDate {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-text-secondary);
+  width: 50%;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 50%;
+  height: 100%;
+  margin-bottom: 24px;
+}
+
+.tournamentText {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+  color: var(--color-text-primary);
+}
+
+.tournamentParagraph {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+.tournamentTeams {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 12px;
+  color: var(--color-text-secondary);
+  list-style-type: circle;
+  margin-left: 12px;
+}
+
+.highlight {
+  color: var(--color-text-primary);
+  background-color: var(--color-tertiary);
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--color-tertiary);
+  letter-spacing: 1px;
+}
+
+.value {
+  color: var(--color-text-primary);
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--color-tertiary);
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  text-transform: capitalize;
+  padding: 12px !important;
+  cursor: pointer;
+  background-color: var(--color-tertiary);
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-tertiary);
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+  font-size: 14px;
+  margin-bottom: 24px;
+  margin-left: 48px;
+}
+
+.button:hover {
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-tertiary);
+}
+
+.icon {
+  font-size: 18px;
+  margin-right: 5px;
 }
