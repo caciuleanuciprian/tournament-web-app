@@ -3,6 +3,7 @@ import styles from "./Bracket.module.css";
 import { useState } from "react";
 import axios from "axios";
 import { getCookie } from "../../utils/cookieUtils";
+import { toast } from "react-toastify";
 
 const ParticipantDetails = ({
   name,
@@ -26,8 +27,12 @@ const ParticipantDetails = ({
           },
         }
       )
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        toast.success("Bracket updated succesfully!");
+      })
+      .catch((err) => {
+        toast.success("There was an error updating the bracket!");
+      });
     setIsWinnerParticipant(!isWinnerParticipant);
   };
 

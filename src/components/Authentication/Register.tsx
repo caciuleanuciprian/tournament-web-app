@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { config } from "../../utils/axiosConfig";
 import { setCookie } from "../../utils/cookieUtils";
+import { toast } from "react-toastify";
 
 import styles from "./Form.module.css";
 
@@ -21,16 +22,22 @@ const Register = () => {
     handleRegister(data);
 
   const handleRegister = (data: any) => {
-    try {
-      axios
-        .post(import.meta.env.VITE_API_LINK + "/auth/register", data, config)
-        .then((res) => {
-          setCookie("auth_by_cookie", res.data.token, 1);
+    axios
+      .post(import.meta.env.VITE_API_LINK + "/auth/register", data, config)
+      .then((res) => {
+        setCookie("auth_by_cookie", res.data.token, 1);
+        setCookie("current_user", res.data.username, 1);
+        toast.success(
+          "Register successful! You will be redirected to your profile page in 5 seconds."
+        );
+        setTimeout(() => {
           location.href = "/profile";
-        });
-    } catch (err) {
-      console.log(err);
-    }
+        }, 3000);
+      })
+      .catch((err) => {
+        toast.error("There was an error with your registration form!");
+        console.log(err);
+      });
   };
 
   return (

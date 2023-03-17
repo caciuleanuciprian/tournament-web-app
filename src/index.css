@@ -18,6 +18,7 @@
   --color-tertiary: #da342f;
   --color-text-primary: #ffffff;
   --color-text-secondary: #9fa3a6;
+  --toastify-color-progress-dark: var(--color-tertiary);
 }
 
 * {

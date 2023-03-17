@@ -34,7 +34,6 @@ const Matchup: React.FC<{
         matchId={matchId}
       />
       <div className={styles.dividerRight}></div>
-      <div className={styles.dividerVertical}></div>
     </div>
   );
 };

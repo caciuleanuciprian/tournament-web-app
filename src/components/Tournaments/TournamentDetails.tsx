@@ -3,7 +3,6 @@ import { Tournament } from "../../types/Tournament";
 import { useParams } from "react-router-dom";
 import Container from "../UI/Container";
 import Bracket from "../Bracket/Bracket";
-import { Participant } from "../../types/Participant";
 
 import styles from "./Tournaments.module.css";
 import axios from "axios";
@@ -35,18 +34,7 @@ const TournamentDetails = () => {
           <div className={styles.rowDetails}>
             <div className={styles.col}>
               <p className={styles.tournamentText}>Details</p>
-              <p className={styles.tournamentParagraph}>Participants</p>
-              <div className={styles.tournamentTeams}>
-                {tournament?.teams.map((participant: any) => {
-                  return (
-                    <li key={participant.id} className={styles.participant}>
-                      {participant.name}
-                    </li>
-                  );
-                })}
-              </div>
-            </div>
-            <div className={styles.col}>
+
               <div>
                 <div className={styles.highlight}>Game</div>
                 <div className={styles.value}>{tournament.game}</div>

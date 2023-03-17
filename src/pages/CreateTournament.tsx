@@ -7,6 +7,7 @@ import { ITournamentFormInput } from "../types/ITournamentFormInput";
 import Container from "../components/UI/Container";
 import { useNavigate } from "react-router-dom";
 import { getCookie } from "../utils/cookieUtils";
+import { toast } from "react-toastify";
 
 import styles from "./CreateTournament.module.css";
 
@@ -31,15 +32,20 @@ const CreateTournament = () => {
 
   const handleCreateTournament = (data: any) => {
     data.teams = splitTeams(data.teams);
-    try {
-      axios
-        .post(`${import.meta.env.VITE_API_LINK}/tournaments`, data, {
-          headers: { Authorization: `Bearer ${getCookie("auth_by_cookie")}` },
-        })
-        .then((res) => console.log(res));
-    } catch (err) {
-      console.log(err);
-    }
+    axios
+      .post(`${import.meta.env.VITE_API_LINK}/tournaments`, data, {
+        headers: { Authorization: `Bearer ${getCookie("auth_by_cookie")}` },
+      })
+      .then((res) => {
+        toast.success("Tournament created succesfully!");
+        setTimeout(() => {
+          navigate("/tournaments");
+        }, 3000);
+      })
+      .catch((err) => {
+        toast.error("There was an error creating your tournament!");
+        console.log(err);
+      });
   };
 
   return (
